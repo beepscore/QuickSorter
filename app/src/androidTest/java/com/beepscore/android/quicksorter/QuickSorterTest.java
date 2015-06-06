@@ -11,14 +11,10 @@ public class QuickSorterTest extends TestCase {
 
     QuickSorter sorter;
 
-    ArrayList<Integer> mList = null;
-    ArrayList<Integer> expectedList = null;
-
     @Override
     public void setUp() throws Exception {
         super.setUp();
         sorter = new QuickSorter();
-        mList = null;
     }
 
     public void testQuickSorterNotNull() {
@@ -41,33 +37,53 @@ public class QuickSorterTest extends TestCase {
     }
 
     public void testQuickSorterSortListNull() {
-        ArrayList<Integer> actual = sorter.quickSort(null);
+        ArrayList<Integer> actual = null;
+        sorter.quickSort(actual, 0, 1);
         assertNull(actual);
     }
 
     public void testQuickSorterSortListOneElement() {
-        mList = new ArrayList<Integer>();
-        mList.add(5);
-        ArrayList<Integer> actual = sorter.quickSort(mList);
-        assertEquals(mList, actual);
+        ArrayList<Integer> expected = new ArrayList<Integer>();
+        expected.add(5);
+        ArrayList<Integer> actual = new ArrayList<Integer>();
+        actual.add(5);
+        sorter.quickSort(actual, 0, actual.size() - 1);
+        assertEquals(expected, actual);
     }
 
     public void testQuickSorterSortListTwoElements() {
-        mList = new ArrayList<Integer>();
-        mList.add(5);
-        mList.add(4);
-        expectedList = new ArrayList<Integer>();
-        expectedList.add(4);
-        expectedList.add(5);
-        ArrayList<Integer> actual = sorter.quickSort(mList);
-        assertEquals(expectedList, actual);
+        ArrayList<Integer> expected = new ArrayList<Integer>();
+        expected.add(4);
+        expected.add(5);
+        ArrayList<Integer> actual = new ArrayList<Integer>();
+        actual.add(5);
+        actual.add(4);
+        sorter.quickSort(actual, 0, actual.size() - 1);
+        assertEquals(expected, actual);
     }
 
     public void testQuickSorterSortListTwoElementsSorted() {
-        mList = new ArrayList<Integer>();
-        mList.add(4);
-        mList.add(5);
-        ArrayList<Integer> actual = sorter.quickSort(mList);
-        assertEquals(mList, actual);
+        ArrayList<Integer> expected = new ArrayList<Integer>();
+        expected.add(4);
+        expected.add(5);
+        ArrayList<Integer> actual = new ArrayList<Integer>();
+        actual.add(4);
+        actual.add(5);
+        sorter.quickSort(actual, 0, actual.size() - 1);
+        assertEquals(expected, actual);
     }
+
+    public void testQuickSorterSortListThreeElements() {
+        ArrayList<Integer> expected = new ArrayList<Integer>();
+        expected.add(4);
+        expected.add(5);
+        expected.add(10);
+        ArrayList<Integer> actual = new ArrayList<Integer>();
+        actual.add(10);
+        actual.add(4);
+        actual.add(5);
+        sorter.quickSort(actual, 0, actual.size() - 1);
+        assertEquals(expected, actual);
+    }
+
 }
