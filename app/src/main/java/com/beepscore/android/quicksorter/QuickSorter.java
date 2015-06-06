@@ -1,6 +1,7 @@
 package com.beepscore.android.quicksorter;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by stevebaker on 6/5/15.
@@ -15,6 +16,7 @@ public class QuickSorter {
      * @return a list sorted in increasing order
      */
     public ArrayList<Integer> quickSort(ArrayList<Integer> list) {
+
         if (list == null) {
             return null;
         }
@@ -22,13 +24,15 @@ public class QuickSorter {
             return list;
         }
 
-        if (list.size() == 2) {
-            if (list.get(0) <= list.get(1)) {
-                return list;
+        // Make a new mSortedList as a copy of list.
+        // This prevents changes to mSortedList from affecting mutable list
+        mSortedList = new ArrayList<>(list);
+
+        if (mSortedList.size() == 2) {
+            if (mSortedList.get(0) <= mSortedList.get(1)) {
+                return mSortedList;
             } else {
-                mSortedList = new ArrayList<Integer>();
-                mSortedList.add(list.get(1));
-                mSortedList.add(list.get(0));
+                Collections.swap(mSortedList, 0, 1);
                 return mSortedList;
             }
         }
