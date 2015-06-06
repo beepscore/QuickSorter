@@ -25,6 +25,21 @@ public class QuickSorterTest extends TestCase {
         assertNotNull(sorter);
     }
 
+    public void testMedianOfThreeValues() {
+        assertEquals(Integer.valueOf(0), sorter.medianOfThreeValues(0, 0, 0));
+        assertEquals(Integer.valueOf(5), sorter.medianOfThreeValues(3, 5, 7));
+        assertEquals(Integer.valueOf(5), sorter.medianOfThreeValues(3, 7, 5));
+        assertEquals(Integer.valueOf(5), sorter.medianOfThreeValues(5, 3, 7));
+        assertEquals(Integer.valueOf(5), sorter.medianOfThreeValues(5, 7, 3));
+        assertEquals(Integer.valueOf(5), sorter.medianOfThreeValues(7, 3, 5));
+        assertEquals(Integer.valueOf(5), sorter.medianOfThreeValues(7, 5, 3));
+    }
+
+    public void testMedianOfThreeValuesDuplicates() {
+        assertEquals(Integer.valueOf(-5), sorter.medianOfThreeValues(-5, 8, -5));
+        assertEquals(Integer.valueOf(-8), sorter.medianOfThreeValues(6, -8, -8));
+    }
+
     public void testQuickSorterSortListNull() {
         ArrayList<Integer> actual = sorter.quickSort(null);
         assertNull(actual);
