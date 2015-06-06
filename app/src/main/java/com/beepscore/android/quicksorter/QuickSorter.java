@@ -37,13 +37,10 @@ public class QuickSorter {
     }
 
     public Integer medianOfThreeValues(Integer a, Integer b, Integer c) {
+
         Integer median = a;
 
-        if (((a > b) && (a <= c))
-                || ((a < b) && (a >= c))) {
-            median = a;
-        }
-        else if (((b > a) && (b <= c))
+        if (((b > a) && (b <= c))
                 || ((b < a) && (b >= c))) {
             median = b;
         }
