@@ -7,6 +7,8 @@ import java.util.ArrayList;
  */
 public class QuickSorter {
 
+    ArrayList<Integer> mSortedList = null;
+
     /** Does not alter supplied list.
      *
      * @param list a list of elements that may be compared
@@ -19,6 +21,18 @@ public class QuickSorter {
         if (list.size() == 1) {
             return list;
         }
+
+        if (list.size() == 2) {
+            if (list.get(0) <= list.get(1)) {
+                return list;
+            } else {
+                mSortedList = new ArrayList<Integer>();
+                mSortedList.add(list.get(1));
+                mSortedList.add(list.get(0));
+                return mSortedList;
+            }
+        }
+
         return null;
     }
 }

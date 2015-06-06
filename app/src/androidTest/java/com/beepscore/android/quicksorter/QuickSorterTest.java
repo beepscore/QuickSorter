@@ -12,6 +12,7 @@ public class QuickSorterTest extends TestCase {
     QuickSorter sorter;
 
     ArrayList<Integer> mList = null;
+    ArrayList<Integer> expectedList = null;
 
     @Override
     public void setUp() throws Exception {
@@ -34,5 +35,16 @@ public class QuickSorterTest extends TestCase {
         mList.add(5);
         ArrayList<Integer> actual = sorter.quickSort(mList);
         assertEquals(mList, actual);
+    }
+
+    public void testQuickSorterSortListTwoElements() {
+        mList = new ArrayList<Integer>();
+        mList.add(5);
+        mList.add(4);
+        expectedList = new ArrayList<Integer>();
+        expectedList.add(4);
+        expectedList.add(5);
+        ArrayList<Integer> actual = sorter.quickSort(mList);
+        assertEquals(expectedList, actual);
     }
 }
