@@ -17,9 +17,7 @@ public class QuickSorterTest extends TestCase {
     public void setUp() throws Exception {
         super.setUp();
         sorter = new QuickSorter();
-
-        mList = new ArrayList<>();
-        mList.add(5);
+        mList = null;
     }
 
     public void testQuickSorterNotNull() {
@@ -27,9 +25,14 @@ public class QuickSorterTest extends TestCase {
     }
 
     public void testQuickSorterSortListNull() {
-        mList = null;
-        ArrayList<Integer> actual = sorter.quickSort(mList);
+        ArrayList<Integer> actual = sorter.quickSort(null);
         assertNull(actual);
     }
 
+    public void testQuickSorterSortListOneElement() {
+        mList = new ArrayList<Integer>();
+        mList.add(5);
+        ArrayList<Integer> actual = sorter.quickSort(mList);
+        assertEquals(mList, actual);
+    }
 }

@@ -16,6 +16,9 @@ public class QuickSorter {
         if (list == null) {
             return null;
         }
+        if (list.size() == 1) {
+            return list;
+        }
         return null;
     }
 }
