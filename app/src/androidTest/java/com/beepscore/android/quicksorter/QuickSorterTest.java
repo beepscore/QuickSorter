@@ -47,4 +47,12 @@ public class QuickSorterTest extends TestCase {
         ArrayList<Integer> actual = sorter.quickSort(mList);
         assertEquals(expectedList, actual);
     }
+
+    public void testQuickSorterSortListTwoElementsSorted() {
+        mList = new ArrayList<Integer>();
+        mList.add(4);
+        mList.add(5);
+        ArrayList<Integer> actual = sorter.quickSort(mList);
+        assertEquals(mList, actual);
+    }
 }
