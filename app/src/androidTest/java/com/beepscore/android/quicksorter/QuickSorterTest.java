@@ -80,13 +80,26 @@ public class QuickSorterTest extends TestCase {
         assertEquals(1, sorter.calculatePivotIndex(list, 0, list.size() - 1));
     }
 
-    public void testQuickSorterSortListNull() {
+    public void testPartitionListThreeElements() {
+        ArrayList<Integer> expected = new ArrayList<Integer>();
+        expected.add(4);
+        expected.add(5);
+        expected.add(10);
+        ArrayList<Integer> actual = new ArrayList<Integer>();
+        actual.add(10);
+        actual.add(4);
+        actual.add(5);
+        sorter.partition(actual, 0, actual.size() - 1);
+        assertEquals(expected, actual);
+    }
+
+    public void testQuickSortListNull() {
         ArrayList<Integer> actual = null;
         sorter.quickSort(actual, 0, 1);
         assertNull(actual);
     }
 
-    public void testQuickSorterSortListOneElement() {
+    public void testQuickSortListOneElement() {
         ArrayList<Integer> expected = new ArrayList<Integer>();
         expected.add(5);
         ArrayList<Integer> actual = new ArrayList<Integer>();
@@ -95,7 +108,7 @@ public class QuickSorterTest extends TestCase {
         assertEquals(expected, actual);
     }
 
-    public void testQuickSorterSortListTwoElements() {
+    public void testQuickSortListTwoElements() {
         ArrayList<Integer> expected = new ArrayList<Integer>();
         expected.add(4);
         expected.add(5);
@@ -106,7 +119,7 @@ public class QuickSorterTest extends TestCase {
         assertEquals(expected, actual);
     }
 
-    public void testQuickSorterSortListTwoElementsSorted() {
+    public void testQuickSortListTwoElementsSorted() {
         ArrayList<Integer> expected = new ArrayList<Integer>();
         expected.add(4);
         expected.add(5);
@@ -117,7 +130,7 @@ public class QuickSorterTest extends TestCase {
         assertEquals(expected, actual);
     }
 
-    public void testQuickSorterSortListThreeElements() {
+    public void testQuickSortListThreeElements() {
         ArrayList<Integer> expected = new ArrayList<Integer>();
         expected.add(4);
         expected.add(5);
