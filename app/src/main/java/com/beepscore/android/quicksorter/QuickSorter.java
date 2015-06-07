@@ -47,14 +47,6 @@ public class QuickSorter {
             return hi;
         }
 
-        if (list.size() == 2) {
-            if (list.get(0) > list.get(1)) {
-                Collections.swap(list, 0, 1);
-            }
-            return hi;
-        }
-
-        // list has >= 3 elements
         int pivotIndex = calculatePivotIndex(list, lo, hi);
         int pivotValue = list.get(pivotIndex);
 
@@ -87,8 +79,8 @@ public class QuickSorter {
     }
 
     /**
-     * Examines value at lo, hi, and middleIndex
-     * @param list a mutable list of elements that may be compared. list length must be >= 3.
+     * Examines value at lo, hi, and middleIndex. If list.size() == 2, middleIndex == 0.
+     * @param list a mutable list of elements that may be compared.
      * @param lo beginning of range for partition
      * @param hi end of range for partition
      * @return index containing median value.

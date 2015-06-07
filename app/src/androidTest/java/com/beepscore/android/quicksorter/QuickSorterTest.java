@@ -21,8 +21,19 @@ public class QuickSorterTest extends TestCase {
         assertNotNull(sorter);
     }
 
-    public void testCalculatePivotIndexListSizeThree() {
+    public void testCalculatePivotIndexListSizeTwo() {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        list.add(5);
+        list.add(4);
+        assertEquals(0, sorter.calculatePivotIndex(list, 0, list.size() - 1));
 
+        list = new ArrayList<Integer>();
+        list.add(4);
+        list.add(5);
+        assertEquals(0, sorter.calculatePivotIndex(list, 0, list.size() - 1));
+    }
+
+    public void testCalculatePivotIndexListSizeThree() {
         ArrayList<Integer> list = new ArrayList<Integer>();
         list.add(10);
         list.add(4);
@@ -107,6 +118,17 @@ public class QuickSorterTest extends TestCase {
         list.add(3);
         list.add(-8);
         assertEquals(3, sorter.calculatePivotIndex(list, 0, list.size() - 1));
+    }
+
+    public void testPartitionListTwoElements() {
+        ArrayList<Integer> expected = new ArrayList<Integer>();
+        expected.add(4);
+        expected.add(5);
+        ArrayList<Integer> actual = new ArrayList<Integer>();
+        actual.add(5);
+        actual.add(4);
+        sorter.partition(actual, 0, actual.size() - 1);
+        assertEquals(expected, actual);
     }
 
     public void testPartitionListThreeElements() {
