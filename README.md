@@ -7,9 +7,5 @@ Do this as a learning exercise.
 
 # Results
 
-## Plan
-
-### pivot about estimate median
-
 ## Tests
 See tests for implemented behavior.
