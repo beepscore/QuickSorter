@@ -56,33 +56,28 @@ public class QuickSorter {
 
         // TODO: fixme.
         // list has >= 3 elements
-        int middleIndex = calculateMiddleIndex(list, lo, hi);
+        // int middleIndex = calculateMiddleIndex(list, lo, hi);
         int pivotIndex = calculatePivotIndex(list, lo, hi);
         int pivotValue = list.get(pivotIndex);
 
-        // move pivot value to middleIndex if necessary
-        if (list.get(middleIndex) != list.get(pivotIndex)) {
-            Collections.swap(list, middleIndex, pivotIndex);
+        // swap pivot value into hi if it isn't there already
+        if (list.get(pivotIndex) != list.get(hi)) {
+            Collections.swap(list, pivotIndex, hi);
         }
 
-        // move 2 indices inward, swap as necessary
-        // increment index until find a swappable
-        int index;
-        for (index = lo; index <= middleIndex; ++index) {
+        int storeIndex = lo;
+        for (int index = lo; index <= hi - 1; ++index) {
 
-            if (list.get(index) > pivotValue) {
-
-                // decrement currentEndIndex until find a swappable
-                for (int currentEndIndex = hi; currentEndIndex > middleIndex; --currentEndIndex) {
-
-                    if (list.get(currentEndIndex) < pivotValue) {
-                        Collections.swap(list, lo, currentEndIndex);
-                        //storeIndex += 1;
-                    }
-                }
+            if (list.get(index) < pivotValue) {
+                Collections.swap(list, index, storeIndex);
+                storeIndex = storeIndex + 1;
             }
         }
-        return index;
+
+        // swap pivot value from hi to storeIndex
+        Collections.swap(list, storeIndex, hi);
+
+        return storeIndex;
     }
 
     public int calculateMiddleIndex(ArrayList<Integer> list, int lo, int hi) {
