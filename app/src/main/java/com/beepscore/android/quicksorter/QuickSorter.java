@@ -54,7 +54,6 @@ public class QuickSorter {
             return hi;
         }
 
-        // TODO: fixme.
         // list has >= 3 elements
         // int middleIndex = calculateMiddleIndex(list, lo, hi);
         int pivotIndex = calculatePivotIndex(list, lo, hi);
@@ -91,7 +90,9 @@ public class QuickSorter {
     /**
      * Examines value at lo, hi, and middleIndex
      * @param list a mutable list of elements that may be compared. list length must be >= 3.
-     * @return index with median value.
+     * @param lo beginning of range for partition
+     * @param hi end of range for partition
+     * @return index containing median value.
      * This helps avoid worst case behavior if list has duplicates or is already sorted in either order.
      * https://en.wikipedia.org/wiki/Quicksort
      */
