@@ -55,7 +55,6 @@ public class QuickSorter {
         }
 
         // list has >= 3 elements
-        // int middleIndex = calculateMiddleIndex(list, lo, hi);
         int pivotIndex = calculatePivotIndex(list, lo, hi);
         int pivotValue = list.get(pivotIndex);
 
