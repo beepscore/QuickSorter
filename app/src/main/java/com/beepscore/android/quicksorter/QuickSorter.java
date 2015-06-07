@@ -85,21 +85,6 @@ public class QuickSorter {
         return index;
     }
 
-    public Integer medianOfThreeValues(Integer a, Integer b, Integer c) {
-
-        Integer median = a;
-
-        if (((b > a) && (b <= c))
-                || ((b < a) && (b >= c))) {
-            median = b;
-        }
-        else if (((c > a) && (c <= b))
-                || ((c < a) && (c >= b))) {
-            median = c;
-        }
-        return median;
-    }
-
     public int calculateMiddleIndex(ArrayList<Integer> list, int lo, int hi) {
         // use lo + difference
         // Reduces chance of integer overflow from (lo + hi)

@@ -21,19 +21,63 @@ public class QuickSorterTest extends TestCase {
         assertNotNull(sorter);
     }
 
-    public void testMedianOfThreeValues() {
-        assertEquals(Integer.valueOf(0), sorter.medianOfThreeValues(0, 0, 0));
-        assertEquals(Integer.valueOf(5), sorter.medianOfThreeValues(3, 5, 7));
-        assertEquals(Integer.valueOf(5), sorter.medianOfThreeValues(3, 7, 5));
-        assertEquals(Integer.valueOf(5), sorter.medianOfThreeValues(5, 3, 7));
-        assertEquals(Integer.valueOf(5), sorter.medianOfThreeValues(5, 7, 3));
-        assertEquals(Integer.valueOf(5), sorter.medianOfThreeValues(7, 3, 5));
-        assertEquals(Integer.valueOf(5), sorter.medianOfThreeValues(7, 5, 3));
+    public void testCalculatePivotIndex() {
+
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        list.add(10);
+        list.add(4);
+        list.add(5);
+        assertEquals(2, sorter.calculatePivotIndex(list, 0, list.size() - 1));
+
+        list = new ArrayList<Integer>();
+        list.add(3);
+        list.add(5);
+        list.add(7);
+        assertEquals(1, sorter.calculatePivotIndex(list, 0, list.size() - 1));
+
+        list = new ArrayList<Integer>();
+        list.add(3);
+        list.add(7);
+        list.add(5);
+        assertEquals(2, sorter.calculatePivotIndex(list, 0, list.size() - 1));
+
+        list = new ArrayList<Integer>();
+        list.add(5);
+        list.add(3);
+        list.add(7);
+        assertEquals(0, sorter.calculatePivotIndex(list, 0, list.size() - 1));
+
+        list = new ArrayList<Integer>();
+        list.add(5);
+        list.add(7);
+        list.add(3);
+        assertEquals(0, sorter.calculatePivotIndex(list, 0, list.size() - 1));
+
+        list = new ArrayList<Integer>();
+        list.add(7);
+        list.add(3);
+        list.add(5);
+        assertEquals(2, sorter.calculatePivotIndex(list, 0, list.size() - 1));
+
+        list = new ArrayList<Integer>();
+        list.add(7);
+        list.add(5);
+        list.add(3);
+        assertEquals(1, sorter.calculatePivotIndex(list, 0, list.size() - 1));
     }
 
-    public void testMedianOfThreeValuesDuplicates() {
-        assertEquals(Integer.valueOf(-5), sorter.medianOfThreeValues(-5, 8, -5));
-        assertEquals(Integer.valueOf(-8), sorter.medianOfThreeValues(6, -8, -8));
+    public void testCalculatePivotIndexDuplicates() {
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        list.add(-5);
+        list.add(8);
+        list.add(-5);
+        assertEquals(0, sorter.calculatePivotIndex(list, 0, list.size() - 1));
+
+        list = new ArrayList<Integer>();
+        list.add(6);
+        list.add(-8);
+        list.add(-8);
+        assertEquals(1, sorter.calculatePivotIndex(list, 0, list.size() - 1));
     }
 
     public void testQuickSorterSortListNull() {
