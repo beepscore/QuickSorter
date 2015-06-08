@@ -1,6 +1,6 @@
 package com.beepscore.android.quicksorter;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Collections;
 
 /**
@@ -16,7 +16,7 @@ public class QuickSorter {
      * Reference
      * https://en.wikipedia.org/wiki/Quicksort
      */
-    public void quickSort(ArrayList<Integer> list, int lo, int hi) {
+    public void quickSort(List<Integer> list, int lo, int hi) {
 
         if (lo < hi) {
             Integer partitionIndex = partition(list, lo, hi);
@@ -37,7 +37,7 @@ public class QuickSorter {
      * Reference
      * https://en.wikipedia.org/wiki/Quicksort
      */
-    public Integer partition(ArrayList<Integer> list, int lo, int hi) {
+    public Integer partition(List<Integer> list, int lo, int hi) {
 
         if (list == null) {
             return hi;
@@ -70,7 +70,7 @@ public class QuickSorter {
         return storeIndex;
     }
 
-    public int calculateMiddleIndex(ArrayList<Integer> list, int lo, int hi) {
+    public int calculateMiddleIndex(List<Integer> list, int lo, int hi) {
         // use lo + difference
         // Reduces chance of integer overflow from (lo + hi)
         // integer division truncates
@@ -87,7 +87,7 @@ public class QuickSorter {
      * This helps avoid worst case behavior if list has duplicates or is already sorted in either order.
      * https://en.wikipedia.org/wiki/Quicksort
      */
-    public int calculatePivotIndex(ArrayList<Integer> list, int lo, int hi) {
+    public int calculatePivotIndex(List<Integer> list, int lo, int hi) {
         // use start + difference
         // Reduces chance of integer overflow from (start + end)
         // integer division truncates
