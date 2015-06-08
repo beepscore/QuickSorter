@@ -11,10 +11,12 @@ public class QuickSorter {
     /** Sorts list elements within inclusive range startIndex to endIndex.
      * Sorts supplied list in place.
      * @param list a mutable list of elements that may be compared
+     * Use more general interface List instead of restricting to type ArrayList
      * @param lo to sort entire list use 0
      * @param hi to sort entire list use list.size() - 1
      * Reference
      * https://en.wikipedia.org/wiki/Quicksort
+     * http://stackoverflow.com/questions/2279030/type-list-vs-type-arraylist-in-java#2279059
      */
     public void quickSort(List<Integer> list, int lo, int hi) {
 
