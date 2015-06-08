@@ -122,7 +122,7 @@ public class QuickSorterTest extends TestCase {
         assertEquals(3, sorter.calculatePivotIndex(list, 0, list.size() - 1));
     }
 
-    public void testPartitionListTwoElements() {
+    public void testPartitionListSizeTwo() {
         List<Integer> expected = new ArrayList<Integer>();
         expected.add(4);
         expected.add(5);
@@ -133,7 +133,7 @@ public class QuickSorterTest extends TestCase {
         assertEquals(expected, actual);
     }
 
-    public void testPartitionListThreeElements() {
+    public void testPartitionListSizeThree() {
         List<Integer> expected = new ArrayList<Integer>();
         expected.add(4);
         expected.add(5);
@@ -146,7 +146,7 @@ public class QuickSorterTest extends TestCase {
         assertEquals(expected, actual);
     }
 
-    public void testPartitionListFourElements() {
+    public void testPartitionListSizeFour() {
         List<Integer> expected = new ArrayList<Integer>();
         expected.add(-8);
         expected.add(0);
@@ -162,7 +162,7 @@ public class QuickSorterTest extends TestCase {
         assertEquals(expected, actual);
     }
 
-    public void testPartitionListFourElements2() {
+    public void testPartitionListSizeFour2() {
         List<Integer> expected = new ArrayList<Integer>();
         expected.add(-8);
         expected.add(0);
@@ -206,7 +206,7 @@ public class QuickSorterTest extends TestCase {
         assertNull(actual);
     }
 
-    public void testQuickSortListOneElement() {
+    public void testQuickSortListSizeOne() {
         List<Integer> expected = new ArrayList<Integer>();
         expected.add(5);
         List<Integer> actual = new ArrayList<Integer>();
@@ -215,7 +215,7 @@ public class QuickSorterTest extends TestCase {
         assertEquals(expected, actual);
     }
 
-    public void testQuickSortListTwoElements() {
+    public void testQuickSortListSizeTwo() {
         List<Integer> expected = new ArrayList<Integer>();
         expected.add(4);
         expected.add(5);
@@ -226,7 +226,7 @@ public class QuickSorterTest extends TestCase {
         assertEquals(expected, actual);
     }
 
-    public void testQuickSortListTwoElementsSorted() {
+    public void testQuickSortListSizeTwoSorted() {
         List<Integer> expected = new ArrayList<Integer>();
         expected.add(4);
         expected.add(5);
@@ -237,7 +237,7 @@ public class QuickSorterTest extends TestCase {
         assertEquals(expected, actual);
     }
 
-    public void testQuickSortListThreeElements() {
+    public void testQuickSortListSizeThree() {
         List<Integer> expected = new ArrayList<Integer>();
         expected.add(4);
         expected.add(5);
